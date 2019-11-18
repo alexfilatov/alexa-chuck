@@ -7,4 +7,11 @@ defmodule ChuckWeb.PageController do
 
     render(conn, "index.html", fact: fact)
   end
+
+  @spec alexa_endpoint(Plug.Conn.t(), any) :: Plug.Conn.t()
+  def alexa_endpoint(conn, params) do
+
+
+    {:ok, "ok"}
+  end
 end

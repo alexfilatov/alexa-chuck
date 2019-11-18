@@ -17,6 +17,7 @@ defmodule ChuckWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/alexa-endpoint", PageController, :alexa_endpoint
   end
 
   # Other scopes may use custom stacks.
