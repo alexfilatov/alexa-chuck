@@ -3,3 +3,7 @@
   <%= @fact %>
   </h1>
 </section>
+
+<section style="text-align: center">
+  <button onclick="javascript:window.location.reload()">Next random fact</button>
+</section>
