@@ -3,7 +3,8 @@ defmodule ChuckWeb.PageController do
 
   @spec index(Plug.Conn.t(), any) :: Plug.Conn.t()
   def index(conn, _params) do
-    fact = "Fact"
+    fact = Chuck.ChuckFacts.get_fact()
+
     render(conn, "index.html", fact: fact)
   end
 end

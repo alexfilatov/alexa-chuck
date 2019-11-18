@@ -6,12 +6,15 @@ defmodule Chuck.Application do
   use Application
 
   def start(_type, _args) do
+    import Supervisor.Spec
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
       Chuck.Repo,
       # Start the endpoint when the application starts
-      ChuckWeb.Endpoint
+      ChuckWeb.Endpoint,
+      worker(Chuck.ChuckFacts, [])
+
       # Starts a worker by calling: Chuck.Worker.start_link(arg)
       # {Chuck.Worker, arg},
     ]
