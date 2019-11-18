@@ -9,8 +9,6 @@ defmodule Chuck.Application do
     import Supervisor.Spec
     # List all child processes to be supervised
     children = [
-      # Start the Ecto repository
-      Chuck.Repo,
       # Start the endpoint when the application starts
       ChuckWeb.Endpoint,
       worker(Chuck.ChuckFacts, [])

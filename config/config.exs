@@ -13,7 +13,7 @@ config :chuck,
 # Configures the endpoint
 config :chuck, ChuckWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "nhhUQ5mp6mHH2DCDKjd869Lilp1zMB6sfBeb7NZuAz6Z+CuwxF7f7nJmNS9mtq4v",
+  secret_key_base: "rE2+mKUy4UDXDfMVPy0njTQhd/BXT5+Dy4YPJhZR8gh8sj7rjAr3IQa4imkxLRgk",
   render_errors: [view: ChuckWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Chuck.PubSub, adapter: Phoenix.PubSub.PG2]
 
