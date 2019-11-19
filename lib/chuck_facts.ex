@@ -4,6 +4,10 @@ defmodule Chuck.ChuckFacts do
   """
   use GenServer
 
+  def init(init_arg) do
+    {:ok, init_arg}
+  end
+
   @impl true
   def start_link() do
     GenServer.start_link(__MODULE__, load_facts(), name: __MODULE__)
