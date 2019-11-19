@@ -15,7 +15,8 @@ config :chuck, ChuckWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "rE2+mKUy4UDXDfMVPy0njTQhd/BXT5+Dy4YPJhZR8gh8sj7rjAr3IQa4imkxLRgk",
   render_errors: [view: ChuckWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Chuck.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Chuck.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "Lh1Wv6A+nQiRqIWnFoWXQnIbaftvXiyX"]
 
 # Configures Elixir's Logger
 config :logger, :console,

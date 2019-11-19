@@ -1,9 +1,7 @@
 defmodule ChuckWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :chuck
 
-  socket "/socket", ChuckWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  socket "/fact_live", Phoenix.LiveView.Socket
 
   # Serve at "/" the static files from "priv/static" directory.
   #

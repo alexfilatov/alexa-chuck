@@ -1,9 +1,5 @@
-<section class="phx-hero">
-  <h1>
-  <%= @fact %>
-  </h1>
-</section>
+<div class="text-center" style="text-align: center">
+<%= Phoenix.LiveView.live_render(@conn, Chuck.Live.FactLive) %>
+</div>
 
-<section style="text-align: center">
-  <button onclick="javascript:window.location.reload()">Next random fact</button>
-</section>
+
