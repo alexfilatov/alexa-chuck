@@ -1,0 +1,14 @@
+# Version of docker-compose
+version: '3'
+
+# Containers we are going to run
+services:
+  # Our Phoenix container
+  phoenix:
+    # The build parameters for this container.
+    build:
+      # Here we define that it should build from the current directory
+      context: .
+    ports:
+    # Mapping the port to make the Phoenix app accessible outside of the container HOST:CONTAINER
+    - "4001:4000"
