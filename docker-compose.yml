@@ -4,11 +4,14 @@ version: '3'
 # Containers we are going to run
 services:
   # Our Phoenix container
-  phoenix:
+  web:
     # The build parameters for this container.
+    environment:
+      APP_PORT: ${APP_PORT}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
     build:
       # Here we define that it should build from the current directory
       context: .
     ports:
     # Mapping the port to make the Phoenix app accessible outside of the container HOST:CONTAINER
-    - "4001:4000"
+    - ${APP_PORT}:${APP_PORT}
