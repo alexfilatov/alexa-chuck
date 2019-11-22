@@ -1,4 +1,4 @@
-defmodule Chuck.ChuckFacts do
+defmodule Chuck.ChuckFactsServer do
   @moduledoc """
   Getting facts from JSON here
   """
@@ -23,7 +23,8 @@ defmodule Chuck.ChuckFacts do
   end
 
   defp load_facts do
-    with {:ok, body} <- File.read("#{Path.dirname(__DIR__)}/config/jokes.json"),
+    require Logger
+    with {:ok, body} <- File.read("#{Path.dirname(__DIR__)}/priv/repo/jokes.json"),
       {:ok, jokes} <- parse_jokes(body)
     do
       %{jokes: jokes}

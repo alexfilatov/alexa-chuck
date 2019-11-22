@@ -11,7 +11,7 @@ defmodule Chuck.Application do
     children = [
       # Start the endpoint when the application starts
       ChuckWeb.Endpoint,
-      worker(Chuck.ChuckFacts, [])
+      worker(Chuck.ChuckFactsServer, [])
 
       # Starts a worker by calling: Chuck.Worker.start_link(arg)
       # {Chuck.Worker, arg},

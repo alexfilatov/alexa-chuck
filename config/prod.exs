@@ -10,12 +10,12 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :chuck, ChuckWeb.Endpoint,
-  url: [host: "chuknorrisfacts.alexfilatov.com", port: 4000],
+  url: [host: "localhost", port: 4100],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   http: [port: {:system, "PORT"}],
   root: ".",
-  secret_key_base: "aejHov5aua0fybsABi7pkSU4lHf5eXdkhWWDKS4KSpZUMeaSuVOHpuJPVh7C2Saw",
+  secret_key_base: {:system, "SECRET_KEY_BASE"},
   check_origin: false
 
 # Do not print debug messages in production

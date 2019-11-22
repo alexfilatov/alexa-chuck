@@ -11,13 +11,13 @@ defmodule Chuck.Live.FactLive do
   end
 
   def mount(_session, socket) do
-    {:ok, assign(socket, :fact, Chuck.ChuckFacts.get_fact())}
+    {:ok, assign(socket, :fact, Chuck.ChuckFactsServer.get_fact())}
   end
 
   def handle_event("random_fact", value, socket) do
     require Logger
     Logger.warn(inspect value)
 
-    {:noreply, assign(socket, :fact, Chuck.ChuckFacts.get_fact())}
+    {:noreply, assign(socket, :fact, Chuck.ChuckFactsServer.get_fact())}
   end
 end
