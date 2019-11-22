@@ -24,11 +24,15 @@ defmodule Chuck.ChuckFactsServer do
 
   defp load_facts do
     require Logger
-    with {:ok, body} <- File.read("#{Path.dirname(__DIR__)}/priv/repo/jokes.json"),
+    path = Path.join([Application.app_dir(:chuck), "priv/repo/jokes.json"])
+
+    with true <- File.exists?(path),
+      {:ok, body} <- File.read(path),
       {:ok, jokes} <- parse_jokes(body)
     do
       %{jokes: jokes}
     else
+      false -> Logger.error("File #{path} not found")
       error -> {:error, error}
     end
   end
