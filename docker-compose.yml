@@ -15,3 +15,4 @@ services:
     ports:
     # Mapping the port to make the Phoenix app accessible outside of the container HOST:CONTAINER
     - ${APP_PORT}:${APP_PORT}
+    image: alexfilatov/chuck:latest
