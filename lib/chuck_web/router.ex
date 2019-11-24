@@ -28,6 +28,6 @@ defmodule ChuckWeb.Router do
   scope "/api", ChuckWeb do
     pipe_through :api
 
-    post "endpoints/alexa", EndpointController, :alexa
+    post "alexa/command", AlexaController, :command
   end
 end
