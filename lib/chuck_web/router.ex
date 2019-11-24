@@ -12,6 +12,10 @@ defmodule ChuckWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    if Mix.env == :prod do
+      plug LessVerifiesAlexa.Plug, application_id: System.get_env("ALEXA_SKILL_ID")
+    end
   end
 
   scope "/", ChuckWeb do
@@ -21,8 +25,9 @@ defmodule ChuckWeb.Router do
     get "/alexa-endpoint", PageController, :alexa_endpoint
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ChuckWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ChuckWeb do
+    pipe_through :api
+
+    post "endpoints/alexa", EndpointController, :alexa
+  end
 end

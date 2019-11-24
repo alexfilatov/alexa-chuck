@@ -42,7 +42,8 @@ defmodule Chuck.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:remix, ">= 0.0.0", only: :dev},
       {:phoenix_live_view, "~> 0.3.0"},
-      {:floki, ">= 0.0.0", only: :test}
+      {:floki, ">= 0.0.0", only: :test},
+      {:less_verifies_alexa, "~> 0.1.0"}
     ]
   end
 

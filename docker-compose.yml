@@ -9,6 +9,7 @@ services:
     environment:
       APP_PORT: ${APP_PORT}
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      ALEXA_SKILL_ID: ${ALEXA_SKILL_ID}
     build:
       # Here we define that it should build from the current directory
       context: .

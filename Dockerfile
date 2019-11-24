@@ -5,7 +5,9 @@ FROM bitwalker/alpine-elixir-phoenix:latest AS app_builder
 ENV MIX_ENV=prod \
     TEST=1 \
     LANG=C.UTF-8 \
-    SECRET_KEY_BASE=${SECRET_KEY_BASE}
+    SECRET_KEY_BASE=${SECRET_KEY_BASE} \
+    ALEXA_SKILL_ID=${ALEXA_SKILL_ID} \
+    APP_PORT=${APP_PORT}
 
 RUN apk add --update git && \
     rm -rf /var/cache/apk/*
