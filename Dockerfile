@@ -34,7 +34,7 @@ RUN mix phx.digest
 RUN mix release
 
 # ---- Application Stage ----
-FROM alpine AS app
+FROM bitwalker/alpine-elixir-phoenix:latest AS app
 
 ENV LANG=C.UTF-8
 

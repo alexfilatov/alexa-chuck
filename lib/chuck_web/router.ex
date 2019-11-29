@@ -22,12 +22,11 @@ defmodule ChuckWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/alexa-endpoint", PageController, :alexa_endpoint
   end
 
   scope "/api", ChuckWeb do
     pipe_through :api
 
-    post "alexa/command", AlexaController, :command
+    post "/alexa/command", AlexaController, :command
   end
 end
