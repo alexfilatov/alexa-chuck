@@ -13,9 +13,9 @@ defmodule ChuckWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
 
-    if Mix.env == :prod do
-      plug LessVerifiesAlexa.Plug, application_id: System.get_env("ALEXA_SKILL_ID")
-    end
+#    if Mix.env != :dev && Mix.env != :test do
+#      plug LessVerifiesAlexa.Plug, application_id: System.get_env("ALEXA_SKILL_ID")
+#    end
   end
 
   scope "/", ChuckWeb do
