@@ -11,6 +11,7 @@ config :chuck, ChuckWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
+  secret_key_base: "rX/UV1PE15ssrSlLsAhlxkV5lqL5gcIApBTLSXo+qTEeYO+WyQw+04h5H/YOdo5b",
   watchers: [
     node: [
       "node_modules/webpack/bin/webpack.js",

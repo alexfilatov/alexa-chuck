@@ -13,15 +13,16 @@ defmodule ChuckWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
 
-#    if Mix.env != :dev && Mix.env != :test do
-#      plug LessVerifiesAlexa.Plug, application_id: System.get_env("ALEXA_SKILL_ID")
-#    end
+    plug LessVerifiesAlexa.Plug, application_id: "amzn1.ask.skill.d92fd8c4-1586-4818-9871-67a9b3b571e9"
   end
 
   scope "/", ChuckWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/terms", PageController, :terms
+    get "/terms-of-use", PageController, :terms
+    get "/privacy-policy", PageController, :policy
   end
 
   scope "/api", ChuckWeb do

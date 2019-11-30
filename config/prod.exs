@@ -13,9 +13,9 @@ config :chuck, ChuckWeb.Endpoint,
   url: [host: "localhost", port: 4100],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
-  http: [port: {:system, "PORT"}],
+  http: [port: 4100],
   root: ".",
-  secret_key_base: {:system, "SECRET_KEY_BASE"},
+  secret_key_base: "rX/UV1PE15ssrSlLsAhlxkV5lqL5gcIApBTLSXo+qTEeYO+WyQw+04h5H/YOdo5b",
   check_origin: false
 
 # Do not print debug messages in production

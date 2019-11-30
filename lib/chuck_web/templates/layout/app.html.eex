@@ -9,13 +9,22 @@
   </head>
   <body>
     <section class="container text-center"  style="text-align: center">
+    <a href="/">
       <img width="auto" height="150" src="<%= Routes.static_path(@conn, "/images/alexa_chuck_logo_small.png") %>" alt="Chuck Norris Facts Alexa Skill Logo"/>
+    </a>
     </section>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
     </main>
+    <footer style="text-align: center">
+    <hr>
+    <a href="/terms">Terms of Use</a> |
+    <a href="/privacy-policy">Privacy policy</a> |
+    <a href="https://github.com/alexfilatov/alexa-chuck">GitHub</a>
+
+    </footer>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

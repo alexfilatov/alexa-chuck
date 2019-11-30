@@ -72,8 +72,7 @@ defmodule ChuckWeb.AlexaController do
   def process_intent(conn, "AMAZON.HelpIntent") do
     response = message(
       "How to use Chuck Norris Jokes",
-      "Just ask Alexa to open Chuck Norris Jokes then say Next if you want to hear next joke and say Stop to make Alexa quiet.",
-      true
+      "Just ask Alexa to open Chuck Norris Jokes then say Next if you want to hear next joke and say Stop to make Alexa quiet."
     )
     send_response(conn, response)
   end
