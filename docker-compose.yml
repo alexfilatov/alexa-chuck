@@ -8,8 +8,10 @@ services:
     # The build parameters for this container.
     environment:
       APP_PORT: ${APP_PORT}
+      APP_HOST: ${APP_HOST}
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       ALEXA_SKILL_ID: ${ALEXA_SKILL_ID}
+      SIGNING_SALT: ${SIGNING_SALT}
     build:
       # Here we define that it should build from the current directory
       context: .

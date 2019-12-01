@@ -43,7 +43,8 @@ defmodule Chuck.MixProject do
       {:remix, ">= 0.0.0", only: :dev},
       {:phoenix_live_view, "~> 0.3.0"},
       {:floki, ">= 0.0.0", only: :test},
-      {:less_verifies_alexa, "~> 0.1.0"}
+      {:less_verifies_alexa, "~> 0.1.0"},
+      {:confex, "~> 3.4.0"}
     ]
   end
 

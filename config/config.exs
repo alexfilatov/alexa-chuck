@@ -8,20 +8,36 @@
 use Mix.Config
 
 config :chuck,
-  ecto_repos: [Chuck.Repo]
+       ecto_repos: [Chuck.Repo]
 
 # Configures the endpoint
-config :chuck, ChuckWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  render_errors: [view: ChuckWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Chuck.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "Lh1Wv6A+nQiRqIWnFoWXQnIbaftvXiyX"]
+config :chuck,
+       ChuckWeb.Endpoint,
+       url: [
+         host: {:system, :string, "APP_HOST", "localhost"},
+         port: {:system, :integer, "APP_PORT", 4100}
+       ],
+       http: [
+         port: {:system, :integer, "APP_PORT", 4100}
+       ],
+       secret_key_base: {:system, :string, "SECRET_KEY_BASE"},
+       render_errors: [
+         view: ChuckWeb.ErrorView,
+         accepts: ~w(html json)
+       ],
+       pubsub: [
+         name: Chuck.PubSub,
+         adapter: Phoenix.PubSub.PG2
+       ],
+       live_view: [
+         signing_salt: {:system, :string, "SIGNING_SALT"}
+       ]
 
 # Configures Elixir's Logger
-config :logger, :console,
-  format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+config :logger,
+       :console,
+       format: "$time $metadata[$level] $message\n",
+       metadata: [:request_id]
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason

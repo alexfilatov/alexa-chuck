@@ -5,7 +5,7 @@ use Mix.Config
 config :chuck, ChuckWeb.Endpoint,
   http: [port: 4002],
   server: false,
-  secret_key_base: {:system, "SECRET_KEY_BASE"}
+  secret_key_base: {:system, :string, "SECRET_KEY_BASE"}
 
 # Print only warnings and errors during test
 config :logger, level: :warn
